@@ -3,8 +3,6 @@ import './style.css';
 import { useState, useEffect } from 'react';
 
 export const HomePage = () => {
-  const [likes, setLike] = useState(0);
-  const [dislikes, setDislike] = useState(0);
   const [jokesList, setJokesList] = useState([]);
 
   useEffect(() => {

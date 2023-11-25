@@ -1,6 +1,11 @@
 import './style.css';
 
+import { useState } from 'react';
+
 export const Jokes = ({ userAvatar, userName, text, likes, dislikes }) => {
+  const [dislike, setDislike] = useState(dislikes);
+  const [like, setLike] = useState(likes);
+
   return (
     <div className="joke">
       <div className="joke__body">
@@ -15,10 +20,10 @@ export const Jokes = ({ userAvatar, userName, text, likes, dislikes }) => {
         <button
           id="btn-up"
           className="btn-like btn-like--up"
-          onClick={() => setLike(likes + 1)}
+          onClick={() => setLike(like + 1)}
         ></button>
         <span id="likes-up" className="likes-count likes-count--up">
-          {likes}
+          {like}
         </span>
         <button
           id="btn-down"
@@ -26,7 +31,7 @@ export const Jokes = ({ userAvatar, userName, text, likes, dislikes }) => {
           onClick={() => setDislike(dislike + 1)}
         ></button>
         <span id="likes-down" className="likes-count likes-count--down">
-          {dislikes}
+          {dislike}
         </span>
       </div>
     </div>
